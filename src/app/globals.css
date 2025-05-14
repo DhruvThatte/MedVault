@@ -1,6 +1,8 @@
+@import '@solana/wallet-adapter-react-ui/styles.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;

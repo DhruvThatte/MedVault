@@ -2,7 +2,8 @@
 
 import { db, storage } from '@/lib/firebase';
 import type { MedicalRecord, MedicalRecordInput } from '@/types';
-import { UploadRecordSchema }_ from '@/lib/validators'; // renamed to avoid conflict
+import { UploadRecordSchema as UploadRecordSchemaValidator } from '@/lib/validators';
+
 import { collection, addDoc, Timestamp, updateDoc, doc, arrayUnion, query, where, getDocs, orderBy } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { revalidatePath } from 'next/cache';
@@ -22,7 +23,7 @@ export async function uploadRecordAction(
     shareWithDoctorWallet: formData.get('shareWithDoctorWallet'),
   };
   
-  const validation = UploadRecordSchema.safeParse(rawFormData);
+  const validation = UploadRecordSchemaValidator.safeParse(rawFormData);
 
   if (!validation.success) {
     return { success: false, message: validation.error.errors.map(e => e.message).join(', ') };
