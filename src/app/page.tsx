@@ -1,10 +1,11 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletConnectButton } from '@/components/auth/WalletConnectButton';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, UploadCloud, Users } from 'lucide-react';
+import { ArrowRight, ShieldCheck, UploadCloud, Users, FileLock2, Network, BarChartBig } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomePage() {
@@ -57,16 +58,52 @@ export default function HomePage() {
         </div>
       </div>
       
-      <div className="mt-16 w-full max-w-4xl">
+      <div className="mt-16 w-full max-w-4xl bg-card rounded-lg shadow-xl overflow-hidden">
         <Image 
           src="https://placehold.co/1200x600.png" 
           alt="MedVault Illustration"
           data-ai-hint="health technology" 
           width={1200} 
           height={600} 
-          className="rounded-lg shadow-xl object-cover" 
+          className="object-cover w-full" 
         />
+        <div className="p-8 text-center">
+          <h2 className="text-3xl font-semibold text-primary mb-4">The Future of Health Records</h2>
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            MedVault empowers you with full control over your medical data. Utilizing the speed and security of the Solana blockchain, 
+            we provide a transparent and tamper-proof platform for managing your sensitive health information. 
+            Easily share with doctors, track your medical history, and own your data like never before.
+          </p>
+        </div>
       </div>
+
+      <div className="mt-20 max-w-5xl w-full">
+        <h2 className="text-4xl font-bold text-center text-primary mb-12">Why Choose MedVault?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-xl shadow-lg">
+            <FileLock2 className="h-12 w-12 text-accent mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Patient-Centric Control</h3>
+            <p className="text-muted-foreground">
+              You decide who sees your records and for how long. Full autonomy over your private health data.
+            </p>
+          </div>
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-xl shadow-lg">
+            <Network className="h-12 w-12 text-accent mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Seamless & Secure Sharing</h3>
+            <p className="text-muted-foreground">
+              Effortlessly share specific records with doctors or specialists using secure Solana wallet addresses.
+            </p>
+          </div>
+          <div className="flex flex-col items-center text-center p-6 bg-card rounded-xl shadow-lg">
+            <BarChartBig className="h-12 w-12 text-accent mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Transparent & Immutable</h3>
+            <p className="text-muted-foreground">
+              Leverage blockchain for an auditable and unalterable history of your medical record access and changes.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
