@@ -13,20 +13,29 @@ MedVault is a decentralized health records management application that leverages
 ## Project Structure
 
 ```
-.gitignore
-components.json
-firestore.indexes.json
-next.config.ts
-package.json
-postcss.config.mjs
-README.md
-tailwind.config.ts
-tsconfig.json
-.idx/
-.vscode/
-docs/
-public/
-src/
+MedVault/
+├── public/ # Static assets (icons, manifest, etc.)
+├── src/
+│ ├── app/ # Next.js App Router pages and layout
+│ │ ├── page.tsx # Main landing page
+│ │ ├── layout.tsx # Root layout with providers
+│ │ └── upload/ # Upload form page
+│ ├── components/ # Reusable UI components
+│ │ ├── WalletConnect.tsx # Solana wallet connect button
+│ │ └── ... # Other UI components
+│ ├── lib/ # Firebase, Solana config & utilities
+│ │ ├── firebase.ts # Firebase config and init
+│ │ └── solana.ts # Solana wallet adapter config
+│ ├── types/ # TypeScript interfaces and types
+│ ├── validators/ # Zod schema validators
+│ └── app/actions/ # Server actions (upload, fetch records, etc.)
+├── .firebaserc # Firebase project config
+├── firebase.json # Firebase hosting and rules setup
+├── firestore.rules # Firestore security rules
+├── firestore.indexes.json # Firestore index definitions
+├── next.config.js # Next.js config (static export for Firebase)
+├── package.json # Project metadata and dependencies
+└── README.md # Project overview and setup
 ```
 
 ### Key Directories
