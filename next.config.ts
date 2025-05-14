@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // experimental: { // Not needed for Next.js 14+ as serverActions are stable
+  //  serverActions: true, 
+  //},
 };
 
 export default nextConfig;
