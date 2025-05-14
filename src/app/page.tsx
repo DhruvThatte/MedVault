@@ -58,24 +58,6 @@ export default function HomePage() {
         </div>
       </div>
       
-      <div className="mt-16 w-full max-w-4xl bg-card rounded-lg shadow-xl overflow-hidden">
-        <Image 
-          src="https://placehold.co/1200x600.png" 
-          alt="MedVault Illustration"
-          data-ai-hint="health technology" 
-          width={1200} 
-          height={600} 
-          className="object-cover w-full" 
-        />
-        <div className="p-8 text-center">
-          <h2 className="text-3xl font-semibold text-primary mb-4">The Future of Health Records</h2>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            MedVault empowers you with full control over your medical data. Utilizing the speed and security of the Solana blockchain, 
-            we provide a transparent and tamper-proof platform for managing your sensitive health information. 
-            Easily share with doctors, track your medical history, and own your data like never before.
-          </p>
-        </div>
-      </div>
 
       <div className="mt-20 max-w-5xl w-full">
         <h2 className="text-4xl font-bold text-center text-primary mb-12">Why Choose MedVault?</h2>
