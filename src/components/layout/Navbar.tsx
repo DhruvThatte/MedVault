@@ -1,6 +1,8 @@
+
 import Link from 'next/link';
 import { Hospital } from 'lucide-react';
 import { WalletConnectButton } from '@/components/auth/WalletConnectButton';
+import { ThemeToggleButton } from './ThemeToggleButton';
 
 export function Navbar() {
   return (
@@ -10,7 +12,10 @@ export function Navbar() {
           <Hospital className="h-7 w-7" />
           <span>MedVault</span>
         </Link>
-        <WalletConnectButton />
+        <div className="flex items-center gap-4">
+          <ThemeToggleButton />
+          <WalletConnectButton />
+        </div>
       </div>
     </header>
   );

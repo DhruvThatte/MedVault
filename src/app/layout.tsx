@@ -1,7 +1,9 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { SolanaWalletProvider } from '@/components/providers/SolanaWalletProvider';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
@@ -30,14 +32,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(geistSans.variable, geistMono.variable, 'antialiased font-sans')}>
-        <SolanaWalletProvider>
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
-            <Footer />
-          </div>
-          <Toaster />
-        </SolanaWalletProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SolanaWalletProvider>
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <main className="flex-grow container mx-auto px-4 py-8">{children}</main>
+              <Footer />
+            </div>
+            <Toaster />
+          </SolanaWalletProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
